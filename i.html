@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Define a codificação de caracteres -->
+    <title>Jogo da Forca</title>
+    <!-- Título da página -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Configuração para responsividade -->
+    <link rel="stylesheet" href="assets/style.css" />
+    <!-- Link para o arquivo CSS -->
+  </head>
+  <body>
+    <div class="container">
+      <h1>Jogo da Forca</h1>
+      <!-- Título do jogo -->
+      <div class="forca-e-boneco">
+        <img src="gancho.png" alt="gancho-1" class="gancho-imagem" />
+        <!-- Imagem do gancho -->
+        <div class="homem">
+          <div class="homem-1"></div>
+          <!-- Parte 1 do boneco -->
+          <div class="homem-2"></div>
+          <!-- Parte 2 do boneco -->
+          <div class="homem-3"></div>
+          <!-- Parte 3 do boneco -->
+          <div class="homem-4"></div>
+          <!-- Parte 4 do boneco -->
+          <div class="homem-5"></div>
+          <!-- Parte 5 do boneco -->
+          <div class="homem-6"></div>
+          <!-- Parte 6 do boneco -->
+        </div>
+      </div>
+    </div>
+    <div class="conteudo">
+      <div id="palavra"></div>
+      <!-- Exibição da palavra para o usuário -->
+      <div class="container-palpite">
+        PALPITE: <input type="text" id="palpite" maxlength="1" />
+        <!-- Campo para o palpite do usuário -->
+      </div>
+      <br />
+      <div class="instrucao">
+        <strong>INSTRUÇÕES:</strong>
+        <!-- Instruções do jogo -->
+        <br />
+        Digite seu palpite na caixa acima.<br />
+        Pressione a tecla <strong>"ENTER"</strong> para enviar sua resposta.
+      </div>
+      <div id="erros"></div>
+      <!-- Exibição dos erros do usuário -->
+    </div>
+
+    <div class="botoes">
+      <button id="iniciar-jogo">Iniciar Jogo</button>
+      <!-- Botão para iniciar o jogo -->
+      <button id="abrir-dialogo">Adicionar Palavra</button>
+      <!-- Botão para abrir o modal de adição de palavras -->
+    </div>
+
+    <div id="dialogo" class="modal">
+      <div class="modal-content">
+        <span class="fechar">&times;</span>
+        <!-- Botão para fechar o modal -->
+        <h2>Cadastrar Novas Palavras</h2>
+        <form id="form-cadastro">
+          <textarea
+            id="novas-palavras"
+            placeholder="Digite as novas palavras, separadas por vírgulas."
+            required
+          ></textarea>
+          <!-- Campo para adicionar novas palavras -->
+          <button type="submit">Salvar e Jogar</button>
+          <!-- Botão para salvar novas palavras -->
+        </form>
+      </div>
+    </div>
+
+    <script src="assets/script.js"></script>
+    <!-- Link para o arquivo JavaScript -->
+  </body>
+</html>

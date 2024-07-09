@@ -1,0 +1,215 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Garante que padding e border sejam incluídos nas dimensões totais dos elementos */
+}
+
+/* Estilos para o corpo da página */
+body {
+  font-family: "Arial", sans-serif; /* Define a fonte padrão */
+  background-color: #f0f0f5; /* Cor de fundo suave */
+  display: flex; /* Torna o corpo um flex container */
+  justify-content: center; /* Centraliza conteúdo horizontalmente */
+  align-items: center; /* Centraliza conteúdo verticalmente */
+  min-height: 100vh; /* Altura mínima de 100% da altura da viewport */
+  padding: 20px; /* Espaçamento interno */
+}
+
+/* Container principal do jogo */
+.container {
+  text-align: center; /* Centraliza o texto */
+  background-color: #fff; /* Fundo branco */
+  padding: 30px; /* Espaçamento interno */
+  border-radius: 15px; /* Borda arredondada */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra mais definida */
+  width: 100%; /* Largura total */
+  max-width: 600px; /* Largura máxima de 600px */
+  transition: transform 0.3s; /* Transição suave ao passar o mouse */
+}
+
+.container:hover {
+  transform: translateY(-5px); /* Elevação suave ao passar o mouse */
+}
+
+/* Estilos para o título do jogo */
+.container h1 {
+  font-size: 2.5em; /* Tamanho da fonte maior */
+  color: #333; /* Cor do texto */
+  margin-bottom: 20px; /* Espaçamento inferior */
+}
+
+/* Container da forca e do boneco */
+.forca-e-boneco {
+  position: relative; /* Posição relativa para posicionar o boneco */
+  margin: 0 auto 20px; /* Centraliza e adiciona margem inferior */
+  width: 200px; /* Largura fixa */
+}
+
+/* Imagem do gancho */
+.gancho-imagem {
+  width: 100%; /* Largura total */
+  margin-bottom: 10px; /* Margem inferior */
+}
+
+/* Oculta todas as partes do boneco por padrão */
+.homem div {
+  display: none; /* Oculta todas as partes do boneco */
+  background-color: #333; /* Cor do boneco */
+}
+
+/* Estilos para o conteúdo do jogo */
+.conteudo {
+  text-align: center; /* Centraliza o texto */
+  margin-top: 20px; /* Margem superior */
+}
+
+/* Estilos para o campo de entrada de palpite */
+.container-palpite input {
+  font-size: 1.5em; /* Tamanho da fonte maior */
+  text-align: center; /* Centraliza o texto */
+  padding: 10px; /* Espaçamento interno */
+  margin-top: 10px; /* Margem superior */
+  border: 1px solid #ddd; /* Borda cinza clara */
+  border-radius: 5px; /* Borda arredondada */
+  width: 60px; /* Largura fixa */
+  transition: border-color 0.3s; /* Transição suave para a cor da borda */
+}
+
+.container-palpite input:focus {
+  border-color: #4caf50; /* Cor da borda ao focar */
+}
+
+/* Estilos para a seção de instruções */
+.instrucao {
+  margin-top: 20px; /* Margem superior */
+  font-size: 0.9em; /* Tamanho da fonte */
+  color: #555; /* Cor do texto cinza escuro */
+  line-height: 1.5; /* Altura da linha */
+}
+
+/* Estilos para a exibição de erros */
+#erros {
+  margin-top: 20px; /* Margem superior */
+  font-size: 1.2em; /* Tamanho da fonte */
+  color: red; /* Cor do texto vermelho */
+  font-weight: bold; /* Negrito */
+}
+
+/* Container dos botões */
+.botoes {
+  text-align: center; /* Centraliza os botões */
+  margin-top: 20px; /* Margem superior */
+}
+
+/* Estilos para os botões */
+.botoes button {
+  font-size: 1.1em; /* Tamanho da fonte */
+  padding: 10px 20px; /* Espaçamento interno */
+  margin: 5px; /* Margem */
+  border: none; /* Remove a borda */
+  border-radius: 5px; /* Borda arredondada */
+  cursor: pointer; /* Cursor de ponteiro */
+  transition: background-color 0.3s, transform 0.3s; /* Transições suaves para a cor de fundo e a transformação */
+}
+
+#iniciar-jogo {
+  background-color: #4caf50; /* Fundo verde */
+  color: white; /* Texto branco */
+}
+
+#iniciar-jogo:hover {
+  background-color: #45a049; /* Fundo verde mais escuro ao passar o mouse */
+  transform: scale(1.05); /* Leve aumento ao passar o mouse */
+}
+
+#abrir-dialogo {
+  background-color: #008cba; /* Fundo azul */
+  color: white; /* Texto branco */
+}
+
+#abrir-dialogo:hover {
+  background-color: #007bb5; /* Fundo azul mais escuro ao passar o mouse */
+  transform: scale(1.05); /* Leve aumento ao passar o mouse */
+}
+
+/* Estilos para o modal */
+.modal {
+  display: none; /* Oculta o modal por padrão */
+  position: fixed; /* Posição fixa */
+  z-index: 1; /* Profundidade do modal */
+  left: 0;
+  top: 0;
+  width: 100%; /* Largura total */
+  height: 100%; /* Altura total */
+  overflow: auto; /* Permite rolagem */
+  background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente */
+  padding-top: 60px; /* Espaçamento superior */
+}
+
+/* Conteúdo do modal */
+.modal-content {
+  background-color: #fefefe; /* Fundo branco */
+  margin: 5% auto; /* Centraliza horizontalmente e adiciona margem superior */
+  padding: 20px; /* Espaçamento interno */
+  border: 1px solid #888; /* Borda cinza */
+  width: 80%; /* Largura de 80% */
+  max-width: 600px; /* Largura máxima de 600px */
+  border-radius: 10px; /* Borda arredondada */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  animation: modalFadeIn 0.5s; /* Animação de fade-in */
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0; /* Opacidade inicial */
+  }
+  to {
+    opacity: 1; /* Opacidade final */
+  }
+}
+
+/* Botão de fechar modal */
+.fechar {
+  color: #aaa; /* Cor do texto cinza */
+  float: right; /* Alinha à direita */
+  font-size: 28px; /* Tamanho da fonte */
+  font-weight: bold; /* Negrito */
+  cursor: pointer; /* Cursor de ponteiro */
+}
+
+.fechar:hover,
+.fechar:focus {
+  color: black; /* Cor preta ao passar o mouse ou focar */
+}
+
+/* Estilos para o formulário de cadastro de novas palavras */
+#form-cadastro {
+  display: flex; /* Torna o formulário um flex container */
+  flex-direction: column; /* Organiza os itens em coluna */
+}
+
+#form-cadastro textarea {
+  font-size: 1em; /* Tamanho da fonte */
+  padding: 10px; /* Espaçamento interno */
+  margin-bottom: 10px; /* Margem inferior */
+  border: 1px solid #ddd; /* Borda cinza clara */
+  border-radius: 5px; /* Borda arredondada */
+  resize: vertical; /* Permite redimensionamento apenas na vertical */
+}
+
+#form-cadastro button {
+  font-size: 1em; /* Tamanho da fonte */
+  padding: 10px; /* Espaçamento interno */
+  border: none; /* Remove a borda */
+  border-radius: 5px; /* Borda arredondada */
+  cursor: pointer; /* Cursor de ponteiro */
+  background-color: #4caf50; /* Fundo verde */
+  color: white; /* Texto branco */
+  transition: background-color 0.3s, transform 0.3s; /* Transições suaves para a cor de fundo e a transformação */
+}
+
+#form-cadastro button:hover {
+  background-color: #45a049; /* Fundo verde mais escuro ao passar o mouse */
+  transform: scale(1.05); /* Leve aumento ao passar o mouse */
+}
